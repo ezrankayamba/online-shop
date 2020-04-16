@@ -35,7 +35,7 @@ const SearchableHeader = ({
         ) : (
           <>
             <SideToggle />
-            <IonTitle>{title}</IonTitle>
+            <IonTitle className="ion-no-padding">{title}</IonTitle>
             <IonButtons slot="end">
               <IonButton onClick={() => setShowSearch(true)}>
                 <IonIcon icon={search} />

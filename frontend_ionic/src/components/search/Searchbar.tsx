@@ -13,6 +13,7 @@ const Searchbar = ({ done, close }: SearchbarProps) => {
         <IonIcon icon={arrowBackOutline} />
       </IonButton>
       <IonSearchbar
+        placeholder="Search ..."
         onIonChange={(e) => done(e.detail.value!)}
         animated
       ></IonSearchbar>

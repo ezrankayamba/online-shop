@@ -1,0 +1,12 @@
+.tab-has-label ion-label.sc-ion-label-md-h {
+  text-transform: uppercase;
+}
+ion-tab-button {
+  margin-left: 0px;
+}
+ion-tab-button.tab-selected {
+  border-bottom: 2px solid #3880ff;
+}
+ion-tab-bar {
+  border-bottom: 0px;
+}

@@ -7,7 +7,8 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
-  IonNote,
+  IonHeader,
+  IonToolbar,
 } from "@ionic/react";
 import React, { useContext } from "react";
 import { withRouter } from "react-router-dom";
@@ -73,10 +74,13 @@ const Menu: React.FC = () => {
 
   return (
     <IonMenu contentId="main" type="overlay">
-      <IonContent>
-        <IonList id="menu-list">
+      <IonHeader>
+        <IonToolbar>
           <IonListHeader>Makoka TAG</IonListHeader>
-          <IonNote>ezrankayamba</IonNote>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonList id="menu-list" className="ion-no-padding">
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>

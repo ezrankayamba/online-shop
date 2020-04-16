@@ -1,6 +1,16 @@
 .searchbar-input {
   border: 0 !important;
   box-shadow: none !important;
-  border-bottom: 1px solid #c0c0c0 !important;
-  border-radius: 0 !important;
+  /* border-bottom: 1px solid #c0c0c0 !important;
+  border-radius: 0 !important; */
+}
+.searchbar-input.sc-ion-searchbar-md {
+  padding-left: 0.4rem;
+}
+.searchbar-search-icon.sc-ion-searchbar-md {
+  display: none;
+}
+.searchbar-has-focus.sc-ion-searchbar-md-h
+  .searchbar-search-icon.sc-ion-searchbar-md {
+  display: none;
 }

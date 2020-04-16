@@ -29,11 +29,11 @@ import Church from "./pages/Church";
 import Visitors from "./pages/Visitors";
 import Platforms from "./__helpers/Platforms";
 import CellGroups from "./pages/CellGroups";
-import { CSSTransition } from "react-transition-group";
+import "./components/tabs/Tabs.css";
 
 const App: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState("");
-  const [sideOpen, setSideOpen] = useState(!Platforms.isMobile());
+  const [sideOpen, setSideOpen] = useState(false);
 
   const toggleSide = () => {
     setSideOpen(!sideOpen && !Platforms.isMobile());
@@ -45,11 +45,8 @@ const App: React.FC = () => {
         <SimpleStore.Provider
           value={{ selectedPage, setSelectedPage, toggleSide }}
         >
-          <IonSplitPane contentId="main" side-max-width="200px">
-            <CSSTransition classNames="sidebar" timeout={300} in={sideOpen}>
-              <Menu />
-            </CSSTransition>
-
+          <IonSplitPane contentId="main" side-max-width="200px" when={sideOpen}>
+            <Menu />
             <IonRouterOutlet id="main">
               <Switch>
                 <>
@@ -75,11 +72,7 @@ const App: React.FC = () => {
                       component={Visitors}
                       exact={true}
                     />
-                    <Route
-                      path="/"
-                      render={() => <Redirect to="/page/home" />}
-                      exact={true}
-                    />
+                    <Route render={() => <Redirect to="/page/home" />} />
                   </IonPage>
                 </>
               </Switch>

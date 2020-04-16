@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
-  IonSearchbar,
   IonList,
   IonItem,
   IonLabel,
@@ -13,7 +9,6 @@ import {
   IonFabButton,
   IonIcon,
 } from "@ionic/react";
-import SideToggle from "../components/SideToggle";
 import { addCircle } from "ionicons/icons";
 import SearchableHeader from "../components/search/HeaderWithSearch";
 const Finances: React.FC = () => {
