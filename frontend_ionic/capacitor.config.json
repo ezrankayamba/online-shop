@@ -1,0 +1,8 @@
+{
+  "appId": "tz.co.nezatech.apps.cimt",
+  "appName": "MakokaTAG",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {}
+}
