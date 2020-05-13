@@ -39,6 +39,6 @@ def init_config(filein, fileout):
 print(init_config("./conf/supervisord.conf", f'{supervisord_path}{program_name}.conf'))
 print(init_config("./conf/nginx", f'{nginx_path}{program_name}'))
 
-run_command(f'cd ../backend_rest && source ../.venv/bin/activate && python manage.py collectstatic --noinput')
+run_command(f'cd ../backend_rest && source ../.venv/bin/activate pip install -r requirements.txt && python manage.py collectstatic --noinput')
 run_command(f'sudo supervisorctl reload && sudo supervisorctl restart {program_name} && sudo service nginx reload')
 run_command(f'sudo certbot --nginx --non-interactive --agree-tos --redirect -d {domain_name}')
