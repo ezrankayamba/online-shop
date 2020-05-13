@@ -37,7 +37,7 @@ def init_config(filein, fileout, outdir):
             return True
 
 
-print(init_config("./conf/supervisord.conf", f'{program_name}.conf'), supervisord_path)
+print(init_config("./conf/supervisord.conf", f'{program_name}.conf', supervisord_path))
 print(init_config("./conf/nginx", f'{program_name}', nginx_path))
 
 run_command(f'cd ../backend_rest && source ../.venv/bin/activate')
