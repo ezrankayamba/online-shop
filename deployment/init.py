@@ -30,10 +30,10 @@ def init_config(filein, fileout, outdir):
             value = DEFAULT[key]
             content = re.sub(f'\\[[{key}]+\\]', value, content)
 
-        with open(f'./tmp/{fileout}', 'w') as f2:
+        with open(f'./mytempdir/{fileout}', 'w') as f2:
             f2.write(content)
-            run_command(f'sudo mv ./tmp/{fileout} {outdir}')
-            print(f'Successfully {fileout} written to {outdir}')
+            run_command(f'sudo mv ./mytempdir/{fileout} {outdir}')
+            print(f'Successfully written {fileout} to {outdir}')
             return True
 
 
