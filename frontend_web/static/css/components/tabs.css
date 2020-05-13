@@ -1,0 +1,31 @@
+:root {
+  --tabs-color: #9b9b9b;
+  --table-active-color: #60d3eb;
+}
+
+.tabs {
+  padding: 0;
+}
+
+.tabs .buttons {
+  display: flex;
+  align-items: center;
+}
+.tabs .buttons .tab {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  color: var(--tabs-color);
+  text-transform: uppercase;
+  font-size: 0.8em;
+  background: none;
+  border: none;
+  outline: none;
+}
+.tabs .buttons .tab.active {
+  color: var(--table-active-color);
+  border-bottom: 1px solid var(--table-active-color);
+}
+.tabs .content {
+  padding: 0.4rem;
+}

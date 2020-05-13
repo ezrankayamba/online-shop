@@ -1,7 +1,0 @@
-{
-  "name": "cimt-app",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react"
-}
