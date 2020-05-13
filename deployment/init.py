@@ -23,22 +23,24 @@ def run_command(cmd):
     os.system(cmd)
 
 
-def init_config(filein, fileout):
+def init_config(filein, fileout, outdir):
     with open(filein, 'r') as f:
         content = f.read()
         for key in DEFAULT:
             value = DEFAULT[key]
             content = re.sub(f'\\[[{key}]+\\]', value, content)
 
-        with open(f'{fileout}', 'w') as f2:
+        with open(f'./tmp/{fileout}', 'w') as f2:
             f2.write(content)
-            print(f'Successfully written to {fileout}')
+            run_command(f'sudo mv ./tmp/{fileout} {outdir}')
+            print(f'Successfully {fileout} written to {outdir}')
             return True
 
 
-print(init_config("./conf/supervisord.conf", f'{supervisord_path}{program_name}.conf'))
-print(init_config("./conf/nginx", f'{nginx_path}{program_name}'))
+print(init_config("./conf/supervisord.conf", f'{program_name}.conf'), supervisord_path)
+print(init_config("./conf/nginx", f'{program_name}', nginx_path))
 
-run_command(f'cd ../backend_rest && pip install -r requirements.txt && python manage.py collectstatic --noinput')
+run_command(f'cd ../backend_rest && source ../.venv/bin/activate')
+run_command(f'pip install -r requirements.txt && python manage.py collectstatic --noinput')
 run_command(f'sudo supervisorctl reload && sudo supervisorctl restart {program_name} && sudo service nginx reload')
 run_command(f'sudo certbot --nginx --non-interactive --agree-tos --redirect -d {domain_name}')
