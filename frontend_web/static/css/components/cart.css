@@ -24,19 +24,29 @@
   width: 100%;
 }
 .cart-item .actions {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
   background: #eee;
   padding: 0.2rem;
   margin-top: 4px;
 }
+
 .cart-item .actions input {
   width: 4rem;
   padding: 0.2rem 0.4rem;
   text-align: center;
   border-radius: 4px;
   border: 1px solid #ddd;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cart-item .actions > :last-child {
+  margin-left: auto;
+}
+.cart-item > p {
+  font-size: 0.8rem;
 }
 
 .cart-item .actions .btn {
@@ -44,8 +54,8 @@
 }
 
 .cart-footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   padding: 0.4rem;
   font-weight: bolder;

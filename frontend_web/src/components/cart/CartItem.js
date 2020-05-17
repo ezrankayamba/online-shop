@@ -13,6 +13,9 @@ const CartItem = ({ product, quantity, updateCart }) => {
       updateCart(product, quantity);
     }
   };
+  const handleDelete = () => {
+    updateCart(product, 0);
+  };
   const total = quantity * product.price;
   return (
     <div className="cart-item">
@@ -20,9 +23,8 @@ const CartItem = ({ product, quantity, updateCart }) => {
       <p>
         {product.name} - TZS {Numbers.fmt(product.price)}
       </p>
-
       <div className="actions">
-        <button className="btn btn-sm btn-link">
+        <button className="btn btn-sm btn-link" onClick={handleDelete}>
           <MatIcon name="delete" extra="text-danger" />
         </button>
         <input
