@@ -10,6 +10,7 @@
 .tabs .buttons {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #ddd;
 }
 .tabs .buttons .tab {
   flex: 1;
@@ -21,10 +22,11 @@
   background: none;
   border: none;
   outline: none;
+  font-weight: bold;
 }
 .tabs .buttons .tab.active {
   color: var(--table-active-color);
-  border-bottom: 1px solid var(--table-active-color);
+  border-bottom: 2px solid var(--table-active-color);
 }
 .tabs .content {
   padding: 0.4rem;

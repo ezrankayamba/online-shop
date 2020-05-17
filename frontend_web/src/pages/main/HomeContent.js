@@ -1,43 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ShowCaseCard from "../../components/ShowCaseCard";
+import CRUD from "../../_services/CRUD";
 
 function HomeContent(props) {
-  const categories = [
-    {
-      name: "Women",
-      items: [
-        {
-          name: "Gown",
-          image: { src: "https://source.unsplash.com/1600x900/?gown" },
-        },
-        {
-          name: "Hand Bags",
-          image: { src: "https://source.unsplash.com/1600x900/?bags" },
-        },
-        {
-          name: "Jewelry",
-          image: { src: "https://source.unsplash.com/1600x900/?jewelry" },
-        },
-      ],
-    },
-    {
-      name: "Men",
-      items: [
-        {
-          name: "Trouser",
-          image: { src: "https://source.unsplash.com/1600x900/?Trouser" },
-        },
-        {
-          name: "Shoes",
-          image: { src: "https://source.unsplash.com/1600x900/?men+shoes" },
-        },
-        {
-          name: "Shirts",
-          image: { src: "https://source.unsplash.com/1600x900/?Shirts" },
-        },
-      ],
-    },
-  ];
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    CRUD.list("/shop/categories", null, {
+      onSuccess: (res) =>
+        setCategories(
+          res.map((cat) => {
+            return {
+              name: cat.name,
+              items: cat.products.map((p) => {
+                return {
+                  ...p,
+                  image: {
+                    src: `https://source.unsplash.com/1600x900/?${p.name}`,
+                  },
+                };
+              }),
+            };
+          })
+        ),
+      onFail: (err) => console.log(err),
+    });
+  }, []);
+
   return (
     <>
       <div className="slideshow">

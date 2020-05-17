@@ -1,5 +1,6 @@
 :root {
   --button-color: #2196f3;
+  --button-secondary-color: rgb(4, 5, 39);
 }
 
 .buttons-container {
@@ -46,7 +47,8 @@
 }
 .btn.btn-outline-secondary {
   background: transparent;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #f8f4f4;
+  color: var(--button-secondary-color);
 }
 .btn.btn-outline-primary {
   background: transparent;
@@ -62,4 +64,12 @@
   color: var(--button-color);
   box-shadow: none;
   font-size: 1.2em;
+  padding: 0;
+}
+.btn.btn-link-secondary {
+  background: transparent;
+  color: #2a2e31;
+  box-shadow: none;
+  font-size: 1em;
+  text-transform: none;
 }

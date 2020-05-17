@@ -14,9 +14,13 @@
 @import "./components/maps.css";
 @import "./components/slideshow.css";
 @import "./components/showcase.css";
+@import "./components/cart.css";
+@import "./components/colors.css";
+@import "./components/icons.css";
 
 :root {
-  --brand-color: #ffd400;
+  --brand-color: #60d3eb;
+  --brand-text-color: #03031b;
   --mobile-breakpoint: 768px;
 }
 
@@ -41,4 +45,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+button {
+  outline: none;
+}
+a {
+  text-decoration: none;
 }

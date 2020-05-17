@@ -26,6 +26,7 @@
 .navbar .buttons button {
   margin: 0 0.4rem;
 }
-.main-page {
+.main-content {
+  padding: 0.4rem;
   margin-top: 2.5rem;
 }

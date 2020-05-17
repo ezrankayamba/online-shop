@@ -15,6 +15,7 @@ import MainLayout from "./MainLayout";
     return {
       user: state.auth.user,
       loggedIn: state.auth.loggedIn,
+      shop: state.shop,
     };
   },
   { logout: logout }
@@ -32,10 +33,10 @@ class Index extends Component {
   }
 
   render() {
-    const { loggedIn, user } = this.props;
+    const { loggedIn, user, shop } = this.props;
     return (
       <Router>
-        <MainLayout loggedIn={loggedIn} user={user} />
+        <MainLayout loggedIn={loggedIn} user={user} shop={shop} />
       </Router>
     );
   }
