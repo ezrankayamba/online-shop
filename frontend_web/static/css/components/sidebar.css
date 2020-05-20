@@ -94,9 +94,15 @@
   .sidebar-menu-toggle {
     display: none;
   }
-  .navbar,
+  /* .navbar,
   .main-content-wraper {
     padding-left: var(--sidebar-width);
+    padding-left: 0;
+  } */
+  .main-content-wraper {
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    /* padding-top: 3rem; */
   }
 
   .sidebar-close {

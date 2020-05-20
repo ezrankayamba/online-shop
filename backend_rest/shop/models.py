@@ -23,8 +23,18 @@ class Product(models.Model):
         return self.name
 
 
+class Address(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.name}, {self.email}, {self.phone}"
+
+
 class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
+    delivery_address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
 
 class OrderItem(models.Model):

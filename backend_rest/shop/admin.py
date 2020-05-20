@@ -10,5 +10,10 @@ class ProductModelAdmin(admin.ModelAdmin):
     list_display = ("name", "price", "category")
 
 
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ("id", "created_at", "delivery_address")
+
+
 admin.site.register(models.Category, CategoryModelAdmin)
 admin.site.register(models.Product, ProductModelAdmin)
+admin.site.register(models.Order, OrderAdmin)

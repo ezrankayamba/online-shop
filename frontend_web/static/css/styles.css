@@ -17,6 +17,8 @@
 @import "./components/cart.css";
 @import "./components/colors.css";
 @import "./components/icons.css";
+@import "./components/layout.css";
+@import "./components/checkout.css";
 
 :root {
   --brand-color: #60d3eb;

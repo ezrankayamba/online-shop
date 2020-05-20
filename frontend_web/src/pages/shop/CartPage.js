@@ -20,6 +20,7 @@ class CartPage extends Component {
       : 0;
     return cart && cart.length ? (
       <div className="cart-container">
+        <h6 className="title">My Cart</h6>
         <div className="cart-items">
           {cart.map((item) => (
             <CartItem key={item.product.id} {...item} updateCart={updateCart} />
@@ -28,7 +29,9 @@ class CartPage extends Component {
         <div className="cart-footer">
           <p>Total</p>
           <p>TZS {Numbers.fmt(total)}</p>
-          <button className="btn">Checkout</button>
+          <a className="btn" href="/checkout">
+            Checkout
+          </a>
         </div>
       </div>
     ) : (

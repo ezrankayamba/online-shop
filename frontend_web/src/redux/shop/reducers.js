@@ -1,4 +1,4 @@
-import { SHOP_UPDATE_CART } from "./actions";
+import { SHOP_UPDATE_CART, SHOP_CLEAR_CART } from "./actions";
 import { getInitialData } from "../../_helpers/StoreUtils";
 
 let shop = getInitialData("shop");
@@ -44,7 +44,11 @@ let shopReducer = (state = initialState, { type, payload }) => {
         ...state,
         cart: [...newCart],
       };
-
+    case SHOP_CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       return initialState;
   }

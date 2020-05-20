@@ -3,6 +3,7 @@ import MainPage from "../../pages/MainPage";
 import Icon from "../../_helpers/Icon";
 import MatIcon from "../MatIcon";
 import CartPage from "../../pages/shop/CartPage";
+import CheckoutPage from "../../pages/shop/CheckoutPage";
 
 const getMenus = (loggedIn, privileges) => {
   let pFilter = (m) => {
@@ -47,6 +48,14 @@ const getMenus = (loggedIn, privileges) => {
           name: "Cart",
           component: CartPage,
           Icon: () => <MatIcon name="shopping_cart" />,
+          privilege: "Anonymous",
+        },
+        {
+          id: getId(),
+          path: "/checkout",
+          name: "Checkout",
+          component: CheckoutPage,
+          Icon: () => <MatIcon name="payment" />,
           privilege: "Anonymous",
         },
       ];

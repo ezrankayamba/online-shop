@@ -10,4 +10,5 @@ router.register(r"order-items", views.OrderItemViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("checkout", views.CheckoutView.as_view()),
 ]
